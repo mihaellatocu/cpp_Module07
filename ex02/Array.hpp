@@ -1,20 +1,24 @@
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
+
 #include <iostream>
 
 template <typename T>
-
 class Array
 {
 private:
-    /* data */
+    size_t  length;
+    T       *arr;
 public:
-    Array(/* args */);
+    Array();
+    Array(size_t n);
+    Array(const Array& other);
+    Array& operator=(const Array& other);
     ~Array();
+
+    T& operator[](size_t index);
+    size_t size() const;
 };
 
-Array::Array(/* args */)
-{
-}
-
-Array::~Array()
-{
-}
+#include "Array.tpp"
+#endif

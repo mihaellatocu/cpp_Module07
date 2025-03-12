@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ_F = ./obj
-SRC = main.cpp
+SRC = main.cpp 
 obj = $(SRC:%.cpp=$(OBJ_F)/%.o)
 
 all: $(NAME)
