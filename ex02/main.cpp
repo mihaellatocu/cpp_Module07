@@ -2,7 +2,7 @@
 #include "Array.hpp"
 #include <stdlib.h>
 
-#define MAX_VAL 750
+#define MAX_VAL 100
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -17,7 +17,7 @@ int main(int, char**)
 
     for (int i = 0; i < 10; i++)
     {
-       std::cout << "values " <<mirror[i] << " " << numbers[i]<<std::endl;
+       std::cout << "values " << mirror[i] << " " << numbers[i]<<std::endl;
     }
     //SCOPE// test for copy array
     {
@@ -43,17 +43,18 @@ int main(int, char**)
     }
     try
     {
-        numbers[MAX_VAL] = 0;
+        numbers[MAX_VAL] = 10;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     numbers[i] = rand();
+    //     std::cout << numbers[i] << " ";
+    // }
     delete [] mirror;//
     return 0;
 }
